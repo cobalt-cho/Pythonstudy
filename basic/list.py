@@ -67,3 +67,15 @@ print(scores2)
 s = [x**2 for x in range(10)] # 간결하게 표현 가능
 list1 = ['all','good','anything','please']
 item = [i[0] for i in list1]
+
+# 이차원 리스트
+s = [[1,2,3,4,5],[4,5,6,7],[8,9,10,11,12,13]]
+
+rows = 6
+cols =6
+table = []
+
+for row in range(rows):
+    table+= [[0]*cols]
+
+
