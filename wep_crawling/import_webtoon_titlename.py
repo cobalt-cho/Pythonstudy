@@ -9,7 +9,7 @@ try:
     if not (os.path.isdir('image')): # 현재 경로에 image라는 폴더 확인
         os.makedirs(os.path.join('image')) # 없을시 현재경로+image경로에 만들것
 except OSError as e:
-    if e.errno != errno.EEXIST:
+   # if e.errno != errno.EEXIST:
         print("폴더 생성 실패!")
         exit()
 
@@ -38,4 +38,4 @@ for li in li_list:
     img_src = img['src']
     # print(title,img_src)
     title = re.sub('[^0-9a-zA-Zㄱ-힗]', '', title) #해당 영역의 글자가 아니 것은 ''로 치환시킨다.
-    urlretrieve( img_src ,'./image/' title+'.jpg') #주소, 파일경로+파일명+확장자
+    urlretrieve( img_src ,'./image/' ,title+'.jpg') #주소, 파일경로+파일명+확장자
