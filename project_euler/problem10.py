@@ -18,7 +18,7 @@ def prime(n):
             for j in range(i+i, n, i): # i의 배수들을 False 판정
                 primeList[j] = False
 
-    # True가 소수이므로 True index만 다른 리스트에 저장장
+    # True가 소수이므로 True index만 다른 리스트에 저장
     for i in range(2,n):
         if primeList[i] == True :
             answer.append(i)
