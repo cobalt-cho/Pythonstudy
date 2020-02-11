@@ -9,9 +9,30 @@
 
 오각수와 육각수도 되는, 그 다음으로 큰 삼각수를 구하세요.
 
+아직 미완성
 '''
 
-for i in range(1,10000):
-    t = i*(i+1)/2
-    p = i*(3*i+1)/2
-    h = i*(2*i+1)
+def t(n):
+    return n * (n + 1) / 2
+
+def j(n):
+    return n * (3 * n - 1) / 2
+
+def h(n):
+    return n * (2 * n - 1)
+
+t2 = 286
+j2 = 166
+h2 = 144
+
+while (t(t2)!=j(j2)!=h(h2)) :
+    if min(t(t2),j(j2),h(h2)) == t(t2) :
+        t2+=1
+    if min(t(t2),j(j2),h(h2)) == j(j2) :
+        j2+=1
+    if min(t(t2),j(j2),h(h2)) == h(h2) :
+        h2+=1
+
+print(t(t2))
+print(j(j2))
+print(h(h2))
