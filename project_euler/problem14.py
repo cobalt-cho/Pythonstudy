@@ -10,16 +10,27 @@ EX) 13에 대해 10번 과정을 통해 1
 가장 긴 과정을 거치는 숫자는?
 (계산 과전 도중에 숫자가 백만을 넘어도 됨)
 
-해결 X
+시간이 오래걸린다 시간을 줄여야 한다
 '''
 
-li = list([1]*1000000)
-for i in range(0,1000000):
 
-    while i!=1 :
-        if i%2==0:
-            i = i//2
-            li[i]+=1
+def solve(n):
+    cnt=1
+    while n!=1:
+        if n%2==0:
+            n = n/2
+            cnt+=1
         else :
-            i = 3*i+1
-            li[i] += 1
+            n = 3*n+1
+            cnt+=1
+    return cnt
+
+max = 0
+answer = 0
+for i in range(1,1000000):
+    if  max < solve(i):
+        max = solve(i)
+        answer=i
+
+print(answer)
+
